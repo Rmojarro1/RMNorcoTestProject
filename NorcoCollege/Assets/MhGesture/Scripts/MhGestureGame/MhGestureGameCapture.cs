@@ -11,7 +11,8 @@ public class MhGestureGameCapture : MonoBehaviour {
     private float pointCapturingDistance;
     private List<Vector2> capturedPoints = new List<Vector2>();
 
-    public PlayerAttack attackScript; 
+    //public PlayerAttack attackScript; 
+    public PlayerAttack2D attackScript; 
     //placeholder, may be removed 
 
 	// Use this for initialization
@@ -33,11 +34,7 @@ public class MhGestureGameCapture : MonoBehaviour {
         if(captureResult != null)
         {
             Debug.Log("Best Match: " + captureResult[0].Name + " , Probability: " + captureResult[0].Probability);
-            if (captureResult[0].Name == "Right")
-            {
-                attackScript.Attack(); 
-                //added, may be removed in future versions
-            }
+            attackScript.Attack(captureResult[0].Name);
         }
         
 

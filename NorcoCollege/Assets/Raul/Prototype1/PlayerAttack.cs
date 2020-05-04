@@ -6,6 +6,11 @@ public class PlayerAttack : MonoBehaviour
 {
     public Rigidbody attack1; 
     public float attackSpeed = 10f; 
+    public GameObject t; 
+    public GameObject d; 
+    public GameObject l; 
+    public GameObject r; 
+    
     
     
     // Start is called before the first frame update
@@ -20,10 +25,48 @@ public class PlayerAttack : MonoBehaviour
         
     }
 
-    public void Attack()
+    public void Attack(string direction)
     {
-        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, transform.position, transform.rotation); 
+        if (direction == "Right")
+        {
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
+            attackCopy.velocity = transform.right * attackSpeed; 
+            Debug.Log("Right");  
+        }
+        if (direction == "Left")
+        {
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, l.transform.position, l.transform.rotation); 
+            attackCopy.velocity = (-transform.right) * attackSpeed; 
+            Debug.Log("Left");
+        }
+        if (direction == "Down")
+        {
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
+            attackCopy.velocity = (-transform.forward) * attackSpeed; 
+            Debug.Log("Down"); 
+        }
+        if (direction == "Up")
+        {
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, t.transform.position, t.transform.rotation); 
+            attackCopy.velocity = transform.forward * attackSpeed; 
+            Debug.Log("Up");  
+        }
+
+        /*
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, l.transform.position, l.transform.rotation); 
+        attackCopy.velocity = transform.left * attackSpeed; 
+        Debug.Log("Attempting to attack now");  
+
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, t.transform.position, t.transform.rotation); 
         attackCopy.velocity = transform.forward * attackSpeed; 
         Debug.Log("Attempting to attack now");  
+        
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
+        attackCopy.velocity = transform.back * attackSpeed; 
+        Debug.Log("Attempting to attack now");  
+        
+        
+        */
+
     }
 }

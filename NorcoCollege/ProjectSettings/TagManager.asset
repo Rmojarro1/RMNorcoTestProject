@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Wall
+  - Attack
+  - Projectile
+  - Slash
   layers:
   - Default
   - TransparentFX
