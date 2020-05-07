@@ -6,6 +6,7 @@ public class PlayerAttack2D : MonoBehaviour
 {
     public Rigidbody2D attack1; 
     public Rigidbody2D attack2; 
+    public Rigidbody slash; 
     public float attackSpeed = 10f; 
 
     public float knockback = 1f; 
@@ -15,6 +16,7 @@ public class PlayerAttack2D : MonoBehaviour
     public GameObject r; 
 
     bool isGuard; 
+    bool moveMode; 
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,8 @@ public class PlayerAttack2D : MonoBehaviour
     {
         if (direction == "Right")
         {
-            Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
+            //Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(slash, r.transform.position, r.transform.rotation);
             attackCopy.velocity = transform.right * attackSpeed; 
             Debug.Log("Right");  
         }
@@ -63,7 +66,7 @@ public class PlayerAttack2D : MonoBehaviour
         if (direction == "Circle")
         {
             isGuard = true; 
-            //Debug.Log("We are now guarding!"); 
+            Debug.Log("We are now guarding!"); 
         }
 
     }
@@ -78,27 +81,26 @@ public class PlayerAttack2D : MonoBehaviour
             }
             else
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-knockback, 0); 
+                //GetComponent<Rigidbody2D>().velocity = new Vector2(-knockback, 0); 
                 Debug.Log("We're hit!"); 
             }
         }
     }
 
-    /*void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter(Collider col )
     {
-        if (other.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy")
         {
-            if (isGuard)
+            if (isGuard == true)
             {
                 Debug.Log("Blocked!"); 
-                
             }
             else
             {
-                Debug.Log("Player hit!"); 
+                //GetComponent<Rigidbody2D>().velocity = new Vector2(-knockback, 0); 
+                Debug.Log("We're hit!"); 
             }
-            
         }
-        //Debug.Log("Hit"); 
-    }*/
+    }
+
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy2D : MonoBehaviour
 {
     public Rigidbody2D projectile; 
+    public Rigidbody proj1; 
     private float timer = 5f; 
     private float attackSpeed = 10f; 
 
@@ -28,10 +29,14 @@ public class Enemy2D : MonoBehaviour
         timer -= Time.deltaTime; 
         if (timer <= 0)
         {
-            Rigidbody2D enemyProjCopy = (Rigidbody2D) Instantiate(projectile, l.transform.position, l.transform.rotation); 
+            /*Rigidbody2D enemyProjCopy = (Rigidbody2D) Instantiate(projectile, l.transform.position, l.transform.rotation); 
             enemyProjCopy.tag = "Enemy"; 
             enemyProjCopy.velocity = (-transform.right) * attackSpeed;
-            timer = 5f; 
+            timer = 5f;*/
+            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(proj1, l.transform.position, l.transform.rotation);
+            enemyProjCopy.tag = "Enemy"; 
+            enemyProjCopy.velocity = (-transform.right) * attackSpeed;
+            timer = 5f;
         }
     }
 
@@ -44,12 +49,21 @@ public class Enemy2D : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Slash")
+        {
+            Debug.Log("Hit by Slash"); 
+            //GetComponent<Rigidbody2D>().velocity = new Vector2(knockback, 0); 
+        }
+    }
+
+    /*void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Projectile")
         {
             Debug.Log("Enemy hit!"); 
         }
         Debug.Log("Hit"); 
-    }
+    }*/
 }

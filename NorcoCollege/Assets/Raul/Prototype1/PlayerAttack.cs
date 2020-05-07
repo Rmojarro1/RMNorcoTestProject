@@ -52,21 +52,5 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Up");  
         }
 
-        /*
-        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, l.transform.position, l.transform.rotation); 
-        attackCopy.velocity = transform.left * attackSpeed; 
-        Debug.Log("Attempting to attack now");  
-
-        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, t.transform.position, t.transform.rotation); 
-        attackCopy.velocity = transform.forward * attackSpeed; 
-        Debug.Log("Attempting to attack now");  
-        
-        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
-        attackCopy.velocity = transform.back * attackSpeed; 
-        Debug.Log("Attempting to attack now");  
-        
-        
-        */
-
     }
 }
