@@ -136,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6798943688169559857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.05, y: -0.18, z: 0.5}
+  m_LocalPosition: {x: -1.05, y: -0.18, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644523168571083832}
@@ -170,7 +170,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6976921016778313218}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a95a66d80ffe4a9b3b00686bb0d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GridPosition: {x: 2147483647, y: 2147483647}
+  m_GridPosition: {x: 2, y: 0}
   m_CurrentGridTile: {fileID: 0}
   m_PreviousGridTile: {fileID: 0}
   m_InitialFacingDirection: {x: 0, y: 1}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cef1f8aef2f66847a6631ff9d9559c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2952332277812001334, guid: 5406fc57236384a4cac42fb97fd2d5e6,
+  projectile: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae,
     type: 3}
-  knockback: 1
   l: {fileID: 6798943688169559857}
+  health: 5

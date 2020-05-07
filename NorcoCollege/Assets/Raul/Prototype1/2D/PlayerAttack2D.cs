@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack2D : MonoBehaviour
 {
-    public Rigidbody2D attack1; 
-    public Rigidbody2D attack2; 
+    public Rigidbody attack1; 
+    //public Rigidbody attack2; 
     public Rigidbody slash; 
     public float attackSpeed = 10f; 
 
@@ -41,25 +41,25 @@ public class PlayerAttack2D : MonoBehaviour
         }
         if (direction == "Left")
         {
-            Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack1, l.transform.position, l.transform.rotation); 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, l.transform.position, l.transform.rotation); 
             attackCopy.velocity = (-transform.right) * attackSpeed; 
             Debug.Log("Left");
         }
         if (direction == "Down")
         {
-            Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack1, d.transform.position, d.transform.rotation); 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
             attackCopy.velocity = (-transform.up) * attackSpeed; 
             Debug.Log("Down"); 
         }
         if (direction == "Up")
         {
-            Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack1, t.transform.position, t.transform.rotation); 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, t.transform.position, t.transform.rotation); 
             attackCopy.velocity = transform.up * attackSpeed; 
             Debug.Log("Up");  
         }
         if (direction == "RArrow")
         {
-            Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack1, r.transform.position, r.transform.rotation); 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
             attackCopy.velocity = transform.right * attackSpeed; 
             Debug.Log("Arrow"); 
         }

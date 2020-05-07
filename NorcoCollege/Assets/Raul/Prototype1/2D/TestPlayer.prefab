@@ -210,9 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18715589daba67647ab401a3b990567a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack1: {fileID: 2952332277812001334, guid: 5406fc57236384a4cac42fb97fd2d5e6, type: 3}
-  attack2: {fileID: -1647672989628191416, guid: 11488e767ad77e74aa8c37f1916f8927,
-    type: 3}
+  attack1: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae, type: 3}
+  slash: {fileID: -3625508330793232013, guid: ea2adbc670d2b3c4e955dd1e9fe8c7e6, type: 3}
   attackSpeed: 10
   knockback: 1
   t: {fileID: 5746211291398329141}
