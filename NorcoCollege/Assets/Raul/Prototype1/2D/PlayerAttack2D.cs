@@ -10,6 +10,7 @@ public class PlayerAttack2D : MonoBehaviour
     public float attackSpeed = 10f; 
 
     public float knockback = 1f; 
+    public static int style; 
     public GameObject t; 
     public GameObject d; 
     public GameObject l; 
@@ -71,7 +72,7 @@ public class PlayerAttack2D : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D col )
+    /*void OnTriggerEnter2D(Collider2D col )
     {
         if (col.gameObject.tag == "Enemy")
         {
@@ -85,7 +86,7 @@ public class PlayerAttack2D : MonoBehaviour
                 Debug.Log("We're hit!"); 
             }
         }
-    }
+    }*/
 
     void OnTriggerEnter(Collider col )
     {
@@ -101,6 +102,12 @@ public class PlayerAttack2D : MonoBehaviour
                 Debug.Log("We're hit!"); 
             }
         }
+    }
+
+    public void incrementStyle()
+    {
+        style++; 
+        Debug.Log(style); 
     }
 
 }

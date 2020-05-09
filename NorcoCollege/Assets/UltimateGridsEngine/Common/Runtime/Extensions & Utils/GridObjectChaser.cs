@@ -31,12 +31,15 @@ public class GridObjectChaser : MonoBehaviour {
 
     protected virtual void Update() {
         // Interval timer
-        if (_intervalTimeLeft > 0f) {
+        if (_intervalTimeLeft > 0f) 
+        {
             _intervalTimeLeft = _intervalTimeLeft - Time.deltaTime;
-            if (_intervalTimeLeft <= 0f) {
+            if (_intervalTimeLeft <= 0f) 
+            {
                 // Set the timer
                 _intervalTimeLeft = m_UpdateInterval;
-            } else {
+            } else 
+            {
                 return;
             }
         }
