@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a95a66d80ffe4a9b3b00686bb0d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GridPosition: {x: 0, y: 0}
+  m_GridPosition: {x: -7, y: -1}
   m_CurrentGridTile: {fileID: 0}
   m_PreviousGridTile: {fileID: 0}
   m_InitialFacingDirection: {x: 0, y: 1}
@@ -142,7 +142,8 @@ MonoBehaviour:
   attack1: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae, type: 3}
   slash: {fileID: -3625508330793232013, guid: ea2adbc670d2b3c4e955dd1e9fe8c7e6, type: 3}
   attackSpeed: 10
-  knockback: 1
+  minMaxStyle: 20
+  health: 10
   t: {fileID: 5746211291398329141}
   d: {fileID: 7837012125356244617}
   l: {fileID: 7327138203955684670}

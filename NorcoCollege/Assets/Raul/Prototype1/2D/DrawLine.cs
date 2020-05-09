@@ -14,7 +14,7 @@ public class DrawLine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //lineRenderer.material.color = Color.white; 
     }
 
     // Update is called once per frame
@@ -49,6 +49,9 @@ public class DrawLine : MonoBehaviour
         cloneLine = Instantiate(line, Vector3.zero, Quaternion.identity) as GameObject; 
         currentLine = cloneLine; 
         lineRenderer = currentLine.GetComponent<LineRenderer>(); 
+        //lineRenderer.material.color = Color.white;
+        lineRenderer.startColor = Color.white; 
+        lineRenderer.endColor = Color.white; 
         mousePositions.Clear(); 
         mousePositions.Add(Camera.main.ScreenToWorldPoint(Input.mousePosition)); 
         mousePositions.Add(Camera.main.ScreenToWorldPoint(Input.mousePosition));
