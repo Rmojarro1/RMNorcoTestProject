@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 8482a2a904030cf4d988ad2dc07a7e6a
+guid: ef0aa3f8688bf344d9b9343b24f4f145
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3981502232044476214
-    second: EnemySpriteSideStand_0
+      213: -3860699545294297937
+    second: SpiritIdleDownView_0
   - first:
-      213: -4873826200279707648
-    second: EnemySpriteSideStand_1
-  - first:
-      213: -3658925365748608742
-    second: EnemySpriteSideStand_2
-  - first:
-      213: 3674758206300725933
-    second: EnemySpriteSideStand_3
+      213: -262470643090817012
+    second: SpiritIdleDownView_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -111,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemySpriteSideStand_0
+      name: SpiritIdleDownView_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac8609a90dcdeb8c0800000000000000
-      internalID: -3981502232044476214
+      spriteID: fa4a83ae73a0c6ac0800000000000000
+      internalID: -3860699545294297937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideStand_1
+      name: SpiritIdleDownView_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 45
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,50 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000165bb4e0bc5cb0800000000000000
-      internalID: -4873826200279707648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemySpriteSideStand_2
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 0
-        width: 62
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1153e204c2e83dc0800000000000000
-      internalID: -3658925365748608742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemySpriteSideStand_3
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 0
-        width: 62
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da2a1027e1d5ff230800000000000000
-      internalID: 3674758206300725933
+      spriteID: c008a9a37548b5cf0800000000000000
+      internalID: -262470643090817012
       vertices: []
       indices: 
       edges: []
@@ -197,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c88535f46cb36c644985b41f71fd9b74
+    spriteID: c1172a69bc932a041856d92beecb362c
     internalID: 0
     vertices: []
     indices: 

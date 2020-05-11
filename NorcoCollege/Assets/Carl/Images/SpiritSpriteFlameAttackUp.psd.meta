@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 8482a2a904030cf4d988ad2dc07a7e6a
+guid: 1015a1530e95e6e4cb1435ca831c668c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3981502232044476214
-    second: EnemySpriteSideStand_0
+      213: 4712657246613473154
+    second: SpiritSpriteFlameAttackUp_0
   - first:
-      213: -4873826200279707648
-    second: EnemySpriteSideStand_1
+      213: 8928926640053188737
+    second: SpiritSpriteFlameAttackUp_1
   - first:
-      213: -3658925365748608742
-    second: EnemySpriteSideStand_2
+      213: -4215120107800301460
+    second: SpiritSpriteFlameAttackUp_2
   - first:
-      213: 3674758206300725933
-    second: EnemySpriteSideStand_3
+      213: 6627017063387371844
+    second: SpiritSpriteFlameAttackUp_3
+  - first:
+      213: 8031285864830841951
+    second: SpiritSpriteFlameAttackUp_4
+  - first:
+      213: 8966531284046616713
+    second: SpiritSpriteFlameAttackUp_5
+  - first:
+      213: -2472385191563349500
+    second: SpiritSpriteFlameAttackUp_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -111,13 +120,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemySpriteSideStand_0
+      name: SpiritSpriteFlameAttackUp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac8609a90dcdeb8c0800000000000000
-      internalID: -3981502232044476214
+      spriteID: 287019c0cc8b66140800000000000000
+      internalID: 4712657246613473154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideStand_1
+      name: SpiritSpriteFlameAttackUp_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 45
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000165bb4e0bc5cb0800000000000000
-      internalID: -4873826200279707648
+      spriteID: 18874edb87be9eb70800000000000000
+      internalID: 8928926640053188737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideStand_2
+      name: SpiritSpriteFlameAttackUp_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 90
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1153e204c2e83dc0800000000000000
-      internalID: -3658925365748608742
+      spriteID: c60f4f83892e085c0800000000000000
+      internalID: -4215120107800301460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideStand_3
+      name: SpiritSpriteFlameAttackUp_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 135
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +197,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da2a1027e1d5ff230800000000000000
-      internalID: 3674758206300725933
+      spriteID: 44918af58e4e7fb50800000000000000
+      internalID: 6627017063387371844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritSpriteFlameAttackUp_4
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54bbd641fbd47f60800000000000000
+      internalID: 8031285864830841951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritSpriteFlameAttackUp_5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988960532b48f6c70800000000000000
+      internalID: 8966531284046616713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiritSpriteFlameAttackUp_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4023eec74c250bdd0800000000000000
+      internalID: -2472385191563349500
       vertices: []
       indices: 
       edges: []
@@ -197,7 +269,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c88535f46cb36c644985b41f71fd9b74
+    spriteID: 7db3d93d29b698f409bd9e0bf1fd645f
     internalID: 0
     vertices: []
     indices: 
