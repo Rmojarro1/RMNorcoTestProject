@@ -7,6 +7,9 @@ public class Enemy2D : MonoBehaviour
     public Rigidbody projectile1; 
 
     public Rigidbody shockwave1; 
+
+    public Rigidbody wideSlashDown; 
+    public Rigidbody wideSlashUp; 
     //public Rigidbody proj1; 
     private float timer = 5f; 
     private float attackSpeed = 10f; 
@@ -33,7 +36,10 @@ public class Enemy2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Attack2();
+        //Attack(); 
+        //Attack2();
+        Attack3(); 
+        Attack4(); 
         DestroyGameObject();  
         
     }
@@ -76,6 +82,30 @@ public class Enemy2D : MonoBehaviour
             Rigidbody enemyProjCopy8 = (Rigidbody) Instantiate(shockwave1, UL.transform.position, UL.transform.rotation);
             enemyProjCopy8.tag = "Enemy"; 
             timer = 5f;
+        }
+    }
+
+    void Attack3()
+    {
+        timer -= Time.deltaTime; 
+        if (timer <= 0)
+        {
+            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(wideSlashDown, D.transform.position, D.transform.rotation);
+            enemyProjCopy.tag = "Enemy"; 
+            //enemyProjCopy.velocity = (-transform.right) * attackSpeed;
+            timer = 2f;
+        }
+    }
+
+    void Attack4()
+    {
+        timer -= Time.deltaTime; 
+        if (timer <= 0)
+        {
+            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(wideSlashUp, U.transform.position, U.transform.rotation);
+            enemyProjCopy.tag = "Enemy"; 
+            //enemyProjCopy.velocity = (-transform.right) * attackSpeed;
+            timer = 2f;
         }
     }
 

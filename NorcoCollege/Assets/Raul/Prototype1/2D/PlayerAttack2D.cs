@@ -6,7 +6,8 @@ public class PlayerAttack2D : MonoBehaviour
 {
     public Rigidbody attack1; 
     //public Rigidbody attack2; 
-    public Rigidbody slash; 
+    public Rigidbody slashV;
+    public Rigidbody slashH;  
     public float attackSpeed = 10f; 
 
     //public float knockback = 1f; 
@@ -45,26 +46,26 @@ public class PlayerAttack2D : MonoBehaviour
         if (direction == "Right")
         {
             //Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
-            Rigidbody attackCopy = (Rigidbody) Instantiate(slash, r.transform.position, r.transform.rotation);
-            attackCopy.velocity = transform.right * attackSpeed; 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, r.transform.position, r.transform.rotation);
+            //attackCopy.velocity = transform.right * attackSpeed; 
             Debug.Log("Right");  
         }
         else if (direction == "Left")
         {
-            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, l.transform.position, l.transform.rotation); 
-            attackCopy.velocity = (-transform.right) * attackSpeed; 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, l.transform.position, l.transform.rotation); 
+            //attackCopy.velocity = (-transform.right) * attackSpeed; 
             Debug.Log("Left");
         }
         else if (direction == "Down")
         {
-            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
-            attackCopy.velocity = (-transform.up) * attackSpeed; 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation); 
+            //attackCopy.velocity = (-transform.up) * attackSpeed; 
             Debug.Log("Down"); 
         }
         else if (direction == "Up")
         {
-            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, t.transform.position, t.transform.rotation); 
-            attackCopy.velocity = transform.up * attackSpeed; 
+            Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, t.transform.position, t.transform.rotation); 
+            //attackCopy.velocity = transform.up * attackSpeed; 
             Debug.Log("Up");  
         }
         else if (direction == "RArrow")
