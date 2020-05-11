@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerAttack2D : MonoBehaviour
 {
     public Rigidbody attack1; 
@@ -23,6 +22,8 @@ public class PlayerAttack2D : MonoBehaviour
 
     bool isGuard; 
     bool staleMove; 
+
+    public PlayerMovement pm; 
     //bool moveMode; 
 
     //public Text test; 
@@ -43,26 +44,31 @@ public class PlayerAttack2D : MonoBehaviour
     public void Attack(string direction)
     {
         RecentAttack(direction); 
-        if (direction == "Right")
+        if (direction == "Right" || direction == "Left" || direction == "Down" || direction == "Up")
+        {
+            pm.playerSwipe(direction); 
+        }
+        
+        else if (direction == "HalfCR")
         {
             //Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
             Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, r.transform.position, r.transform.rotation);
             //attackCopy.velocity = transform.right * attackSpeed; 
             Debug.Log("Right");  
         }
-        else if (direction == "Left")
+        else if (direction == "HalfCL")
         {
             Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, l.transform.position, l.transform.rotation); 
             //attackCopy.velocity = (-transform.right) * attackSpeed; 
             Debug.Log("Left");
         }
-        else if (direction == "Down")
+        else if (direction == "HalfCD")
         {
             Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation); 
             //attackCopy.velocity = (-transform.up) * attackSpeed; 
             Debug.Log("Down"); 
         }
-        else if (direction == "Up")
+        else if (direction == "HalfCU")
         {
             Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, t.transform.position, t.transform.rotation); 
             //attackCopy.velocity = transform.up * attackSpeed; 
