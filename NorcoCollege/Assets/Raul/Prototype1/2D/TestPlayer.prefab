@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack1: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae, type: 3}
-  slash: {fileID: -3625508330793232013, guid: ea2adbc670d2b3c4e955dd1e9fe8c7e6, type: 3}
+  slashV: {fileID: 5210854879142978780, guid: fe9d68cf80fb7844dba814cccce208f7, type: 3}
+  slashH: {fileID: 3932550780869343135, guid: 464cc2dc74c3b6647a95b789bb041699, type: 3}
   attackSpeed: 10
   minMaxStyle: 20
   health: 10

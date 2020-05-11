@@ -525,6 +525,10 @@ MonoBehaviour:
     type: 3}
   shockwave1: {fileID: -7930634395649187152, guid: 2772599652e668c4580c851bd4f55377,
     type: 3}
+  wideSlashDown: {fileID: 4998356335391372635, guid: 1a0fbfde472f1b94a8023bae34ed4c98,
+    type: 3}
+  wideSlashUp: {fileID: 3097595122791961249, guid: 914f187434050cd4195fd1d13ef19162,
+    type: 3}
   player: {fileID: 0}
   L: {fileID: 6798943688169559857}
   R: {fileID: 356797765046680405}
