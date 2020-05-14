@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 50761e221c4b0ff42be2414c76194f3b
+guid: e15fbe6d26f836b458bac2d419a40342
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5936119830256564811
-    second: EnemySpriteSideAttack_0
+      213: 5799462163561304035
+    second: SpiritSpriteBlockUp_0
   - first:
-      213: 8507037005056306685
-    second: EnemySpriteSideAttack_1
+      213: -3029355355375976235
+    second: SpiritSpriteBlockUp_1
   - first:
-      213: 6004539676375734914
-    second: EnemySpriteSideAttack_2
+      213: 6164913890955539195
+    second: SpiritSpriteBlockUp_2
   - first:
-      213: 449083434745793755
-    second: EnemySpriteSideAttack_3
+      213: -4845485115203737292
+    second: SpiritSpriteBlockUp_3
   - first:
-      213: 3155704741514838160
-    second: EnemySpriteSideAttack_4
+      213: 1395037930415827863
+    second: SpiritSpriteBlockUp_4
   - first:
-      213: 5224266399040762185
-    second: EnemySpriteSideAttack_5
+      213: -4726514483176806154
+    second: SpiritSpriteBlockUp_5
   - first:
-      213: 4636033989254058747
-    second: EnemySpriteSideAttack_6
+      213: 8076538504426987149
+    second: SpiritSpriteBlockUp_6
   - first:
-      213: -5314410255116813496
-    second: EnemySpriteSideAttack_7
+      213: 6213467214634006688
+    second: SpiritSpriteBlockUp_7
   - first:
-      213: -539814919814789371
-    second: EnemySpriteSideAttack_8
+      213: -80613952242461052
+    second: SpiritSpriteBlockUp_8
   - first:
-      213: 1179773883277947453
-    second: EnemySpriteSideAttack_9
+      213: 2998842923217971737
+    second: SpiritSpriteBlockUp_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_0
+      name: SpiritSpriteBlockUp_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b5c76d177aae9da0800000000000000
-      internalID: -5936119830256564811
+      spriteID: 3efc3636c14db7050800000000000000
+      internalID: 5799462163561304035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_1
+      name: SpiritSpriteBlockUp_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 45
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfdeb7975111f0670800000000000000
-      internalID: 8507037005056306685
+      spriteID: 5d04360ca5195f5d0800000000000000
+      internalID: -3029355355375976235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_2
+      name: SpiritSpriteBlockUp_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 90
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28a5d12b509645350800000000000000
-      internalID: 6004539676375734914
+      spriteID: bf2b64d458c2e8550800000000000000
+      internalID: 6164913890955539195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_3
+      name: SpiritSpriteBlockUp_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 135
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc098a21077b3600800000000000000
-      internalID: 449083434745793755
+      spriteID: 439a6dfc5f061ccb0800000000000000
+      internalID: -4845485115203737292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_4
+      name: SpiritSpriteBlockUp_4
       rect:
         serializedVersion: 2
-        x: 248
+        x: 180
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09002062eb05bcb20800000000000000
-      internalID: 3155704741514838160
+      spriteID: 79ba1a24b9b2c5310800000000000000
+      internalID: 1395037930415827863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_5
+      name: SpiritSpriteBlockUp_5
       rect:
         serializedVersion: 2
-        x: 310
+        x: 225
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94175de4c92508840800000000000000
-      internalID: 5224266399040762185
+      spriteID: 6f8e184ae1c086eb0800000000000000
+      internalID: -4726514483176806154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_6
+      name: SpiritSpriteBlockUp_6
       rect:
         serializedVersion: 2
-        x: 372
+        x: 270
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf21028b950865040800000000000000
-      internalID: 4636033989254058747
+      spriteID: d8e922b7af0a51070800000000000000
+      internalID: 8076538504426987149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_7
+      name: SpiritSpriteBlockUp_7
       rect:
         serializedVersion: 2
-        x: 434
+        x: 315
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84bb119a70c6f36b0800000000000000
-      internalID: -5314410255116813496
+      spriteID: 0a8bbc7e28baa3650800000000000000
+      internalID: 6213467214634006688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_8
+      name: SpiritSpriteBlockUp_8
       rect:
         serializedVersion: 2
-        x: 496
+        x: 360
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 507cbf3c0313288f0800000000000000
-      internalID: -539814919814789371
+      spriteID: 486d5ac990a91eef0800000000000000
+      internalID: -80613952242461052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpriteSideAttack_9
+      name: SpiritSpriteBlockUp_9
       rect:
         serializedVersion: 2
-        x: 558
+        x: 405
         y: 0
-        width: 62
-        height: 50
+        width: 45
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d32b01c98166f5010800000000000000
-      internalID: 1179773883277947453
+      spriteID: 91ae99700c70e9920800000000000000
+      internalID: 2998842923217971737
       vertices: []
       indices: 
       edges: []
@@ -341,7 +341,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 47dbebef099c6ff42965f9c257a1ca6b
+    spriteID: 05efc322bb62dbc46947b3b095a3bc8c
     internalID: 0
     vertices: []
     indices: 
