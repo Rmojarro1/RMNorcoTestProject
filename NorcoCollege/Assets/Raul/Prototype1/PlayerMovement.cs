@@ -31,8 +31,10 @@ public class PlayerMovement : GridMovement
     {
         if (direction == "Right")
         {
-            TryMoveToNeighborInPosition(Vector2Int.right, false, false, true);
-            Debug.Log("Move right"); 
+            TryMoveToPosition(Vector2Int.right, false, false, true);
+            //TryMoveToNeighborInPosition(Vector2Int.right, false, false, true);
+            Debug.Log("Move right");
+            Debug.Log(TryMoveToNeighborInPosition(Vector2Int.right, false, false, true));
         }
         else if (direction == "Left")
         {

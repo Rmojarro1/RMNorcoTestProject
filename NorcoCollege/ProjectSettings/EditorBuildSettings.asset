@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UltimateGridsEngine/Demos/Main-Demo/Main-Demo.unity
-    guid: daa30aa787cfc1f4c98a5e012e74492e
+    path: Assets/Daniel/Scenes/Prototype Title Screen.unity
+    guid: 1315b33ba75db84439a048ac8bc29add
+  - enabled: 1
+    path: Assets/Daniel/Scenes/New Prototype Level.unity
+    guid: 81808c93329bfe04db317e922f27daae
   m_configObjects: {}
