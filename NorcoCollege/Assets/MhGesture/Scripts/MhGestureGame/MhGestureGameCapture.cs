@@ -24,6 +24,9 @@ public class MhGestureGameCapture : MonoBehaviour {
         // consider changing  MhGestureManager.distanceConstant in case of diferent resolution than 1920x1080
         //current ratio is compromise which should do good result in most cases
         pointCapturingDistance = (Screen.width * Screen.height) / MhGestureManager.distanceConstant;
+
+        //remove when working with Test Grid Scene
+        //attackScript = GameObject.Find("AltPlayer").GetComponent<PlayerAttack2D>(); 
     }
 	
 	// Update is called once per frame
