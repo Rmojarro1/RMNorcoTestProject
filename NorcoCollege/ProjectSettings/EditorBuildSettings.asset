@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Daniel/Scenes/Prototype Title Screen.unity
-    guid: 1315b33ba75db84439a048ac8bc29add
+    path: Assets/Carl/IslandMenu.unity
+    guid: e93214e416360854082cdd85f5519541
   - enabled: 1
-    path: Assets/Daniel/Scenes/New Prototype Level.unity
-    guid: 81808c93329bfe04db317e922f27daae
+    path: Assets/Carl/Test Scene.unity
+    guid: ab3734387b9702943aaef8f659e3a3da
   m_configObjects: {}
