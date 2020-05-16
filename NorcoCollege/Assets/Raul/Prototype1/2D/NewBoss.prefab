@@ -227,8 +227,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.4, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.3, y: 0.2, z: 1}
+  m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!212 &6876201810538266115
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -320,6 +320,8 @@ MonoBehaviour:
   wideSlashUp: {fileID: 3097595122791961249, guid: 914f187434050cd4195fd1d13ef19162,
     type: 3}
   animator: {fileID: 6328231517877975868}
+  isBlue: 0
+  isRed: 0
   player: {fileID: 0}
   L: {fileID: 6961400111983649703}
   R: {fileID: 4193685140601294787}

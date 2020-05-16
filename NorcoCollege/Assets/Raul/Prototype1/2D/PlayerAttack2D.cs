@@ -18,6 +18,7 @@ public class PlayerAttack2D : MonoBehaviour
 
     //public float knockback = 1f;
     public static int style;
+    public static int revertNormal; 
     public int minMaxStyle = 20;
     private string lastAttack = "";
     private bool maxStyle;
@@ -46,7 +47,7 @@ public class PlayerAttack2D : MonoBehaviour
     {
         DestroyGameObject();
         displayHealth.text = "Health: " + health;
-        displayStyle.text = "Style: " + style + "/100";
+        displayStyle.text = "Style: " + style + "/20";
     }
 
     public void Attack(string direction)
@@ -195,12 +196,28 @@ public class PlayerAttack2D : MonoBehaviour
             animator.SetBool("AtMaxStyle", true); 
             animator.SetTrigger("MaxStyle"); 
             Debug.Log("Max style"); 
+            MaxStyleEnd(); 
         }
         else 
         {
             maxStyle = false; 
             animator.SetBool("AtMaxStyle", false);
         }
+    }
+
+    public void MaxStyleEnd()
+    {
+        if (revertNormal >= 3)
+        {
+            style = 0; 
+            revertNormal = 0; 
+            AtMaxStyle(); 
+        }
+        else
+        {
+            revertNormal++;
+        }
+        //revertNormal++; 
     }
 
     public bool GetMaxStyle()
@@ -217,7 +234,7 @@ public class PlayerAttack2D : MonoBehaviour
         }
         else
         {
-            style += 5; 
+            style += 3; 
         }
         //test.text = style.ToString(); 
     }
@@ -231,7 +248,7 @@ public class PlayerAttack2D : MonoBehaviour
         }
         else
         {
-            style += 10; 
+            style += 5; 
         }
         //test.text = style.ToString(); 
     }

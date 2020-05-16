@@ -40,7 +40,7 @@ public class Enemy2D : MonoBehaviour
         //Attack2();
         //Attack3(); 
         //Attack4(); 
-        DestroyGameObject();  
+        //DestroyGameObject();  
         
     }
 
@@ -143,8 +143,15 @@ public class Enemy2D : MonoBehaviour
         if (player.GetComponent<PlayerAttack2D>().GetMaxStyle() == true)
         {
             health--; 
+            DestroyGameObject(); 
         }
         player.GetComponent<PlayerAttack2D>().IncrementStyle();
+    }
+
+    public void Revive()
+    {
+        health = 5; 
+        //gameObject.SetActive(true); 
     }
 
     void DestroyGameObject()
@@ -153,7 +160,8 @@ public class Enemy2D : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Enemy destroyed"); 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false); 
         }
          
     }
