@@ -1,48 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using TMPro; 
+using TMPro; 
 
 public class PlayerAttack2D : MonoBehaviour
 {
-    public Rigidbody attack1; 
-    //public Rigidbody attack2; 
+    public TextMeshProUGUI displayHealth;
+    public TextMeshProUGUI displayStyle;
+
+    public Rigidbody attack1;
+    //public Rigidbody attack2;
     public Rigidbody slashV;
-    public Rigidbody slashH;  
-    public float attackSpeed = 10f; 
+    public Rigidbody slashH;
+    public float attackSpeed = 10f;
 
-    public Animator animator; 
+    public Animator animator;
 
-    //public float knockback = 1f; 
-    public static int style; 
-    public int minMaxStyle = 20; 
+    //public float knockback = 1f;
+    public static int style;
+    public int minMaxStyle = 20;
     private string lastAttack = "";
-    private bool maxStyle;  
-    public int health = 10; 
-    public GameObject t; 
-    public GameObject d; 
-    public GameObject l; 
-    public GameObject r; 
+    private bool maxStyle;
+    public int health = 10;
+    public GameObject t;
+    public GameObject d;
+    public GameObject l;
+    public GameObject r;
 
-    bool isGuard; 
-    bool staleMove; 
+    bool isGuard;
+    bool staleMove;
 
-    //public PlayerMovement pm; 
-    //bool moveMode; 
+    //public PlayerMovement pm;
+    //bool moveMode;
 
-    //public TextMeshProGUI score; 
+    //public TextMeshProGUI score;
     
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        DestroyGameObject(); 
+        DestroyGameObject();
+        displayHealth.text = "Health: " + health;
+        displayStyle.text = "Style: " + style + "/100";
     }
 
     public void Attack(string direction)
@@ -71,7 +75,6 @@ public class PlayerAttack2D : MonoBehaviour
         }
         else if (direction == "HalfCU")
         {
-            
             StartCoroutine(UpSlash()); 
             //animator.SetBool("UpSlash", true); 
             //animator.SetTrigger("OnUpSlash"); 
@@ -102,7 +105,6 @@ public class PlayerAttack2D : MonoBehaviour
         AtMaxStyle(); 
 
     }
-
 
     void OnTriggerEnter(Collider col )
     {
@@ -253,7 +255,7 @@ public class PlayerAttack2D : MonoBehaviour
             Debug.Log("Player destroyed"); 
             Destroy(gameObject);
         }
-         
     }
+
 
 }
