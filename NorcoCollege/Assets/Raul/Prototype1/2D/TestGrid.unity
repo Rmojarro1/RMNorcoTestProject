@@ -1672,69 +1672,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca5d79c006ccc0146bbcd95c73380e1a, type: 3}
---- !u!1 &768343678 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7345885134679953838, guid: cbf4487145bb50946be29bbf07f3faf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6335368782861006620}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &768343679
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768343678}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -3860699545294297937, guid: ef0aa3f8688bf344d9b9343b24f4f145,
-    type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.45, y: 0.32}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!95 &768343684 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6335368782615764584, guid: cbf4487145bb50946be29bbf07f3faf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6335368782861006620}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &782733221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5644523168571083832, guid: 5286d994177973a4895398f8a81701b2,
@@ -2588,31 +2525,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1269322738}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1065340891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7347032476404518666, guid: cbf4487145bb50946be29bbf07f3faf4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6335368782861006620}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1065340894
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1065340891}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 71902f54624bad2459749ce76cb5e5a0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1098183029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8352665384473316851, guid: ca5d79c006ccc0146bbcd95c73380e1a,
@@ -6514,6 +6426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5805048998706615608, guid: 0ec79978b804e294bbd963a2b45371fe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9082056307212949250, guid: 0ec79978b804e294bbd963a2b45371fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6586,7 +6503,7 @@ PrefabInstance:
     - target: {fileID: 6778602936711395988, guid: d912a6d7b4ad7e24f975e10bf6738ff9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8112161801555753134, guid: d912a6d7b4ad7e24f975e10bf6738ff9,
         type: 3}
@@ -6705,16 +6622,6 @@ PrefabInstance:
     - target: {fileID: 532854219135520557, guid: cbf4487145bb50946be29bbf07f3faf4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3910628569037340530, guid: cbf4487145bb50946be29bbf07f3faf4,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 768343684}
-    - target: {fileID: 7189258246350956947, guid: cbf4487145bb50946be29bbf07f3faf4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7345885134679953838, guid: cbf4487145bb50946be29bbf07f3faf4,

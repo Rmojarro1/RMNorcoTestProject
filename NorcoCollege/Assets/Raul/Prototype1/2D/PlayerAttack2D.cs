@@ -74,19 +74,24 @@ public class PlayerAttack2D : MonoBehaviour
             
             StartCoroutine(UpSlash()); 
             //animator.SetBool("UpSlash", true); 
-            animator.SetTrigger("OnUpSlash"); 
-            Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, t.transform.position, t.transform.rotation); 
+            //animator.SetTrigger("OnUpSlash"); 
+            //Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, t.transform.position, t.transform.rotation); 
             //attackCopy.velocity = transform.up * attackSpeed; 
-            Debug.Log("HalfCU"); 
+            //Debug.Log("HalfCU"); 
             //yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length+animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             //animator.SetBool("UpSlash", false);
             //animator.ResetTrigger("OnUpSlash");
         }
-        else if (direction == "RArrow")
+        else if (direction == "LightR")
         {
-            Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
-            attackCopy.velocity = transform.right * attackSpeed; 
-            Debug.Log("Arrow"); 
+            StartCoroutine(SideMagic());
+            //Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
+            //attackCopy.velocity = transform.right * attackSpeed; 
+            //Debug.Log("Magic"); 
+        }
+        else if (direction == "LightU")
+        {
+            StartCoroutine(UpMagic()); 
         }
         else if (direction == "Circle")
         {
@@ -147,6 +152,26 @@ public class PlayerAttack2D : MonoBehaviour
         animator.SetTrigger("OnSideSlash");
     }
 
+    IEnumerator SideMagic()
+    {
+        animator.SetTrigger("OnSideMagic");
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
+        attackCopy.velocity = transform.right * attackSpeed; 
+        Debug.Log("Magic");
+        yield return new WaitForSeconds(1.0f);
+        animator.SetTrigger("OnSideMagic");
+    }
+
+    IEnumerator UpMagic()
+    {
+        animator.SetTrigger("OnUpMagic");
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, t.transform.position, t.transform.rotation); 
+        attackCopy.velocity = transform.up * attackSpeed; 
+        Debug.Log("UpMagic");
+        yield return new WaitForSeconds(1.0f);
+        animator.SetTrigger("OnUpMagic");
+    }
+
     private void RecentAttack(string direction)
     {
         if (lastAttack == direction)
@@ -165,11 +190,14 @@ public class PlayerAttack2D : MonoBehaviour
         if (style >= minMaxStyle)
         {
             maxStyle = true; 
+            animator.SetBool("AtMaxStyle", true); 
+            animator.SetTrigger("MaxStyle"); 
             Debug.Log("Max style"); 
         }
         else 
         {
             maxStyle = false; 
+            animator.SetBool("AtMaxStyle", false);
         }
     }
 
@@ -192,11 +220,27 @@ public class PlayerAttack2D : MonoBehaviour
         //test.text = style.ToString(); 
     }
 
+    public void IncrementStyleBonus()
+    {
+        if (staleMove == true)
+        {
+            style += 2; 
+            //Debug.Log(style); 
+        }
+        else
+        {
+            style += 10; 
+        }
+        //test.text = style.ToString(); 
+    }
+
     IEnumerator Guard()
     {
         isGuard = true; 
+        animator.SetTrigger("OnSideBlock");
         Debug.Log("Guarding"); 
         yield return new WaitForSeconds(1.0f);
+        animator.SetTrigger("OnSideBlock");
         isGuard = false; 
         Debug.Log("Not guarding");
     }

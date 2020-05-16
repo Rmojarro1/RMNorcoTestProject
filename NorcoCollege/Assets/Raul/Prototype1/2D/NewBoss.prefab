@@ -183,11 +183,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8112161801555753134}
   - component: {fileID: 3696157255697518796}
-  - component: {fileID: 3891606751626914362}
   - component: {fileID: 6876201810538266115}
   - component: {fileID: 6328231517877975868}
+  - component: {fileID: 4120868105346895339}
   m_Layer: 0
-  m_Name: NewEnemy
+  m_Name: NewBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,36 +229,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3891606751626914362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6778602936711395988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cef1f8aef2f66847a6631ff9d9559c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile1: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae,
-    type: 3}
-  shockwave1: {fileID: -7930634395649187152, guid: 2772599652e668c4580c851bd4f55377,
-    type: 3}
-  wideSlashDown: {fileID: 4998356335391372635, guid: 1a0fbfde472f1b94a8023bae34ed4c98,
-    type: 3}
-  wideSlashUp: {fileID: 3097595122791961249, guid: 914f187434050cd4195fd1d13ef19162,
-    type: 3}
-  player: {fileID: 0}
-  L: {fileID: 6961400111983649703}
-  R: {fileID: 4193685140601294787}
-  U: {fileID: 6962511681264969630}
-  D: {fileID: 8571552125524084624}
-  DL: {fileID: 7737245549977972891}
-  DR: {fileID: 8168035595660180668}
-  UR: {fileID: 7794133836417327083}
-  UL: {fileID: 2223748675830668554}
-  health: 5
 --- !u!212 &6876201810538266115
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -329,6 +299,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4120868105346895339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778602936711395988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44b4dd379e678f47a74c03bc0d9101d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile1: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae,
+    type: 3}
+  shockwave1: {fileID: -7930634395649187152, guid: 2772599652e668c4580c851bd4f55377,
+    type: 3}
+  wideSlashDown: {fileID: 4998356335391372635, guid: 1a0fbfde472f1b94a8023bae34ed4c98,
+    type: 3}
+  wideSlashUp: {fileID: 3097595122791961249, guid: 914f187434050cd4195fd1d13ef19162,
+    type: 3}
+  animator: {fileID: 6328231517877975868}
+  player: {fileID: 0}
+  L: {fileID: 6961400111983649703}
+  R: {fileID: 4193685140601294787}
+  U: {fileID: 6962511681264969630}
+  D: {fileID: 8571552125524084624}
+  DL: {fileID: 7737245549977972891}
+  DR: {fileID: 8168035595660180668}
+  UR: {fileID: 7794133836417327083}
+  UL: {fileID: 2223748675830668554}
+  health: 5
 --- !u!1 &6961400111983649703
 GameObject:
   m_ObjectHideFlags: 0
