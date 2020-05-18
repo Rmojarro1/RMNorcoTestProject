@@ -17,7 +17,7 @@ public class PlayerAttack2D : MonoBehaviour
     public Animator animator;
 
     //public float knockback = 1f;
-    public static int style;
+    public static int style = 0;
     public static int revertNormal; 
     public int minMaxStyle = 20;
     private string lastAttack = "";
@@ -28,8 +28,8 @@ public class PlayerAttack2D : MonoBehaviour
     public GameObject l;
     public GameObject r;
 
-    bool isGuard;
-    bool staleMove;
+    bool isGuard = false;
+    bool staleMove = false;
 
     //public PlayerMovement pm;
     //bool moveMode;

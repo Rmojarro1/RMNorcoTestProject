@@ -7,10 +7,9 @@ public class GameManager : MonoBehaviour
     public GameObject boss; 
     public GameObject enemy; 
 
-    public GameObject bossSpawn; 
+    //public GameObject bossSpawn; 
 
-    public GameObject enemySpawn; 
-    public bool firstBoss; 
+    //public GameObject enemySpawn; 
     public bool isBoss; 
     public bool isEnemy; 
     

@@ -12,7 +12,7 @@ public class Enemy2D : MonoBehaviour
     public Rigidbody wideSlashUp; 
     //public Rigidbody proj1; 
     private float timer = 5f; 
-    private float attackSpeed = 10f; 
+    //private float attackSpeed = 10f; 
 
     public Animator animator; 
 
