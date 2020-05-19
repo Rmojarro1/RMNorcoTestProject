@@ -44,15 +44,24 @@ public class MhGestureManager
     }
 
 
-    public static void LoadGestures(string filePath = "Assets/MhGesture/Data/Gestures.json")
+    public static void LoadGestures(string filePath =  "Assets/MhGesture/Data/Gestures.json")
     {
-        if (!File.Exists(filePath))
+        /*string fullPath = Application.dataPath;
+        //string fullPath; 
+        #if UNITY_EDITOR
+        fullPath += "/MhGesture/Data/Gestures.json";
+        #else
+        fullPath += "/Resources/Gestures.json";
+        #endif
+        if (!File.Exists(fullPath))
         {
-            Debug.Log(string.Format("File in path: {0} was not found", filePath));
+            Debug.Log(string.Format("File in path: {0} was not found", fullPath));
             return;
 
-        }
-        string jsonString = File.ReadAllText(filePath);
+        }*/
+        //string jsonString = File.ReadAllText(fullPath);
+        TextAsset gestureFile = Resources.Load<TextAsset>("Gestures");
+        string jsonString = gestureFile.text;
 
         MhGestureList list = JsonUtility.FromJson<MhGestureList>(jsonString);
         gestures = list.gestures;
