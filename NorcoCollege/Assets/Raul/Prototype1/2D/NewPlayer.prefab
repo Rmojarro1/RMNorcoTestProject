@@ -198,13 +198,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18715589daba67647ab401a3b990567a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayHealth: {fileID: 0}
+  displayStyle: {fileID: 0}
   attack1: {fileID: 9178982190020853592, guid: 2be7496c6d92e874d85035e906a2a9ae, type: 3}
   slashV: {fileID: 5210854879142978780, guid: fe9d68cf80fb7844dba814cccce208f7, type: 3}
   slashH: {fileID: 3932550780869343135, guid: 464cc2dc74c3b6647a95b789bb041699, type: 3}
   attackSpeed: 10
   animator: {fileID: 6335368782615764584}
   minMaxStyle: 20
-  health: 10
+  health: 15
   t: {fileID: 1753418606506211274}
   d: {fileID: 4263054341632924278}
   l: {fileID: 3622294015359500737}

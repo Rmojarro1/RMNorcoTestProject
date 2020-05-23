@@ -31,23 +31,26 @@ public class PlayerAttack2D : MonoBehaviour
     bool isGuard = false;
     bool staleMove = false;
 
-    //public PlayerMovement pm;
-    //bool moveMode;
+    Vector3 nextPosition; 
+    Vector3 destination;
 
-    //public TextMeshProGUI score;
+    private bool canMove;
+
     
     // Start is called before the first frame update
     void Start()
     {
-
+        nextPosition = Vector3.up;
+        destination = transform.position; 
     }
 
     // Update is called once per frame
     void Update()
     {
         DestroyGameObject();
-        displayHealth.text = "Health: " + health;
-        displayStyle.text = "Style: " + style + "/20";
+        //displayHealth.text = "Health: " + health;
+        //displayStyle.text = "Style: " + style + "/20";
+        Move(); 
     }
 
     public void Attack(string direction)
@@ -105,6 +108,52 @@ public class PlayerAttack2D : MonoBehaviour
         }
         AtMaxStyle(); 
 
+    }
+
+    void Move()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, destination, attackSpeed * Time.deltaTime); 
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            nextPosition = new Vector3(0, 0.1f, 0); 
+            //currentDirection = up; 
+            canMove = true; 
+        }
+
+        if (Input.GetAxisRaw("Vertical") < 0)
+        {
+            nextPosition = new Vector3(0, -0.1f, 0); 
+            //currentDirection = down;
+            canMove = true; 
+        }
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            nextPosition = new Vector3(0.1f, 0, 0); 
+            //currentDirection = right; 
+            canMove = true; 
+        }
+            
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            nextPosition = new Vector3(-0.1f, 0, 0); 
+            //currentDirection = left; 
+            canMove = true; 
+        }
+
+        if (Vector3.Distance(destination, transform.position) <= 0.00001f)
+        {
+            //transform.localEulerAngles = currentDirection; 
+            if (canMove)
+            {
+                //if(Valid())
+                //{
+                    destination = transform.position + nextPosition; 
+                    //direction = nextPosition; 
+                    canMove = false; 
+                //}
+                
+            }
+        }
     }
 
     void OnTriggerEnter(Collider col )

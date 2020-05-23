@@ -687,9 +687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 2097834522}
   enemy: {fileID: 889475854}
-  bossSpawn: {fileID: 102570313}
-  enemySpawn: {fileID: 908851458}
-  firstBoss: 0
   isBoss: 0
   isEnemy: 0
 --- !u!4 &141092494
@@ -7168,16 +7165,6 @@ PrefabInstance:
       propertyPath: displayStyle
       value: 
       objectReference: {fileID: 2097018504}
-    - target: {fileID: 3910628569037340530, guid: cbf4487145bb50946be29bbf07f3faf4,
-        type: 3}
-      propertyPath: health
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3910628569037340530, guid: cbf4487145bb50946be29bbf07f3faf4,
-        type: 3}
-      propertyPath: minMaxStyle
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 7345885134679953838, guid: cbf4487145bb50946be29bbf07f3faf4,
         type: 3}
       propertyPath: m_Name
