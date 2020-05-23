@@ -50,14 +50,17 @@ public class PlayerAttack2D : MonoBehaviour
         DestroyGameObject();
         //displayHealth.text = "Health: " + health;
         //displayStyle.text = "Style: " + style + "/20";
-        Move(); 
+        //Move(); 
     }
 
     public void Attack(string direction)
     {
         RecentAttack(direction); 
-        
-        if (direction == "HalfCR")
+        if (direction == "Right" || direction == "Left" || direction == "Up" || direction == "Down")
+        {
+            MoveG(direction); 
+        }
+        else if (direction == "HalfCR")
         {
             StartCoroutine(RightSlash());
             //Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
@@ -154,6 +157,49 @@ public class PlayerAttack2D : MonoBehaviour
                 
             }
         }
+    }
+
+    void MoveG(string direction)
+    {
+        string move = direction; 
+        //transform.position = Vector3.MoveTowards(transform.position, destination, 1f); 
+        if (move == "Up")
+        {
+            nextPosition = new Vector3(0, 1, 0); 
+            canMove = true; 
+        }
+
+        else if (move == "Down")
+        {
+            nextPosition = new Vector3(0, -1, 0); 
+            canMove = true; 
+        }
+        else if (move == "Right")
+        {
+            nextPosition = new Vector3(1, 0, 0); 
+            canMove = true; 
+        }
+            
+        else if (move == "Left")
+        {
+            nextPosition = new Vector3(-1, 0, 0); 
+            canMove = true; 
+        }
+
+        if (Vector3.Distance(destination, transform.position) <= 0.00001f)
+        {
+            //transform.localEulerAngles = currentDirection; 
+            if (canMove)
+            {
+                //if(Valid())
+                //{
+                    destination = transform.position + nextPosition; 
+                    canMove = false; 
+                //}
+                
+            }
+        }
+        transform.position = Vector3.MoveTowards(transform.position, destination, 1f);
     }
 
     void OnTriggerEnter(Collider col )
