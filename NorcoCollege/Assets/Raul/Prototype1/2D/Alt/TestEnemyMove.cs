@@ -7,6 +7,8 @@ public class TestEnemyMove : MonoBehaviour
     //GameObject player; 
     public Transform target; 
     public float speed = 3f; 
+
+    bool isClose; 
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,10 @@ public class TestEnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TargetPlayer(); 
+        if (isClose != true)
+        {
+            TargetPlayer(); 
+        }
     }
 
     void TargetPlayer()
@@ -31,5 +36,20 @@ public class TestEnemyMove : MonoBehaviour
 
         float step =  speed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, target.position, step/2);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            isClose = true; 
+            Debug.Log("Player in range"); 
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        isClose = false; 
+        Debug.Log("Player not in range");
     }
 }

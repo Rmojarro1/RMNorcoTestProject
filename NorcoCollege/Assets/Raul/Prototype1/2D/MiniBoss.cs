@@ -82,7 +82,6 @@ public class MiniBoss : MonoBehaviour
         {
             StartCoroutine(DownSlash());
             timer = 5f;
-            //OnColorChange();
         }
          
     }
@@ -97,8 +96,6 @@ public class MiniBoss : MonoBehaviour
         {
             animator.SetTrigger("OnBlueSwipe");
         }
-        //animator.SetTrigger("OnRedSwipe");
-        //Debug.Log("Starting animation"); 
         yield return new WaitForSeconds(1.4f);
         Rigidbody enemyProjCopy = (Rigidbody) Instantiate(wideSlashDown, D.transform.position, D.transform.rotation);
         enemyProjCopy.tag = "Enemy"; 
@@ -112,7 +109,6 @@ public class MiniBoss : MonoBehaviour
         {
             animator.SetTrigger("OnBlueSwipe");
         }
-        //animator.SetTrigger("OnRedSwipe");
         OnColorChange();
         
         
