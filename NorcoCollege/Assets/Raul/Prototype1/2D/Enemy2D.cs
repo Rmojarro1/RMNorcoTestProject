@@ -25,7 +25,7 @@ public class Enemy2D : MonoBehaviour
     public GameObject DR; 
     public GameObject UR; 
     public GameObject UL; 
-    public int health = 5; 
+    public int health = 1; 
     
     // Start is called before the first frame update
     void Start()
@@ -150,7 +150,7 @@ public class Enemy2D : MonoBehaviour
 
     public void Revive()
     {
-        health = 5; 
+        health = 1; 
         //gameObject.SetActive(true); 
     }
 

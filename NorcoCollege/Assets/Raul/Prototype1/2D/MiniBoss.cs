@@ -27,7 +27,7 @@ public class MiniBoss : MonoBehaviour
     public GameObject DR; 
     public GameObject UR; 
     public GameObject UL; 
-    public int health = 5; 
+    public int health = 1; 
     
     // Start is called before the first frame update
     void Start()
@@ -160,7 +160,14 @@ public class MiniBoss : MonoBehaviour
         }
         else if(col.gameObject.tag == "Projectile")
         {
-            Damage(); 
+            if (isBlue)
+            {
+                DamageBonus(); 
+            }
+            else
+            {
+                Damage(); 
+            }
             Debug.Log("Hit by projectile"); 
         }
     }
@@ -186,7 +193,7 @@ public class MiniBoss : MonoBehaviour
 
     public void Revive()
     {
-        health = 5; 
+        health = 1; 
         //gameObject.SetActive(true); 
     }
 

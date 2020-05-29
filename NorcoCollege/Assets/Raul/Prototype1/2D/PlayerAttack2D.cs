@@ -35,11 +35,15 @@ public class PlayerAttack2D : MonoBehaviour
     Vector3 destination;
 
     private bool canMove;
+    bool moveMode; 
+    bool attackMode; 
+    bool magicMode; 
 
     
     // Start is called before the first frame update
     void Start()
     {
+        moveMode = true; 
         nextPosition = Vector3.up;
         destination = transform.position; 
     }
@@ -48,9 +52,32 @@ public class PlayerAttack2D : MonoBehaviour
     void Update()
     {
         DestroyGameObject();
+        ModeChange(); 
         //displayHealth.text = "Health: " + health;
         //displayStyle.text = "Style: " + style + "/20";
         //Move(); 
+    }
+
+    void ModeChange()
+    {
+        if (Input.GetKeyDown("w"))
+        {
+            moveMode = true; 
+            attackMode = false; 
+            magicMode = false; 
+        }
+        else if (Input.GetKeyDown("a"))
+        {
+            moveMode = false; 
+            attackMode = true; 
+            magicMode = false; 
+        }
+        else if (Input.GetKeyDown("d"))
+        {
+            moveMode = false; 
+            attackMode = false; 
+            magicMode = true; 
+        }
     }
 
     public void Attack(string direction)
@@ -58,50 +85,71 @@ public class PlayerAttack2D : MonoBehaviour
         RecentAttack(direction); 
         if (direction == "Right" || direction == "Left" || direction == "Up" || direction == "Down")
         {
-            MoveG(direction); 
+            if (moveMode == true)
+            {
+                MoveG(direction);
+            } 
         }
         else if (direction == "HalfCR")
         {
-            StartCoroutine(RightSlash());
-            //Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
-            //Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, r.transform.position, r.transform.rotation);
-            //attackCopy.velocity = transform.right * attackSpeed; 
-            Debug.Log("RightCR");  
+            if (attackMode == true)
+            {
+                StartCoroutine(RightSlash());
+                //Rigidbody2D attackCopy = (Rigidbody2D) Instantiate(attack2, r.transform.position, r.transform.rotation); 
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, r.transform.position, r.transform.rotation);
+                //attackCopy.velocity = transform.right * attackSpeed; 
+                Debug.Log("RightCR");
+            }  
         }
         else if (direction == "HalfCL")
         {
-            Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, l.transform.position, l.transform.rotation); 
-            //attackCopy.velocity = (-transform.right) * attackSpeed; 
-            Debug.Log("HalfCL");
+            if (attackMode == true)
+            {
+                Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, l.transform.position, l.transform.rotation); 
+                //attackCopy.velocity = (-transform.right) * attackSpeed; 
+                Debug.Log("HalfCL");
+            }
         }
         else if (direction == "HalfCD")
         {
-            Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation); 
-            //attackCopy.velocity = (-transform.up) * attackSpeed; 
-            Debug.Log("HalfCD"); 
+            if (attackMode == true)
+            {
+                Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation); 
+                //attackCopy.velocity = (-transform.up) * attackSpeed; 
+                Debug.Log("HalfCD"); 
+            }
         }
         else if (direction == "HalfCU")
         {
-            StartCoroutine(UpSlash()); 
-            //animator.SetBool("UpSlash", true); 
-            //animator.SetTrigger("OnUpSlash"); 
-            //Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, t.transform.position, t.transform.rotation); 
-            //attackCopy.velocity = transform.up * attackSpeed; 
-            //Debug.Log("HalfCU"); 
-            //yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length+animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            //animator.SetBool("UpSlash", false);
-            //animator.ResetTrigger("OnUpSlash");
+            if (attackMode == true)
+            {
+                StartCoroutine(UpSlash()); 
+                //animator.SetBool("UpSlash", true); 
+                //animator.SetTrigger("OnUpSlash"); 
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, t.transform.position, t.transform.rotation); 
+                //attackCopy.velocity = transform.up * attackSpeed; 
+                //Debug.Log("HalfCU"); 
+                //yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length+animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+                //animator.SetBool("UpSlash", false);
+                //animator.ResetTrigger("OnUpSlash");
+            }
         }
         else if (direction == "LightR")
         {
-            StartCoroutine(SideMagic());
-            //Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
-            //attackCopy.velocity = transform.right * attackSpeed; 
-            //Debug.Log("Magic"); 
+            if (magicMode == true)
+            {
+                StartCoroutine(SideMagic());
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
+                //attackCopy.velocity = transform.right * attackSpeed; 
+                //Debug.Log("Magic");
+            } 
         }
         else if (direction == "LightU")
         {
-            StartCoroutine(UpMagic()); 
+            if (magicMode == true)
+            {
+                StartCoroutine(UpMagic()); 
+            }
         }
         else if (direction == "Circle")
         {
@@ -329,7 +377,7 @@ public class PlayerAttack2D : MonoBehaviour
         }
         else
         {
-            style += 3; 
+            style += 1; 
         }
         //test.text = style.ToString(); 
     }
@@ -338,12 +386,12 @@ public class PlayerAttack2D : MonoBehaviour
     {
         if (staleMove == true)
         {
-            style += 2; 
+            style += 1; 
             //Debug.Log(style); 
         }
         else
         {
-            style += 5; 
+            style += 3; 
         }
         //test.text = style.ToString(); 
     }
