@@ -38,6 +38,7 @@ public class PlayerAttack2D : MonoBehaviour
     bool moveMode; 
     bool attackMode; 
     bool magicMode; 
+    public SpriteRenderer sprite; 
 
     
     // Start is called before the first frame update
@@ -105,18 +106,20 @@ public class PlayerAttack2D : MonoBehaviour
         {
             if (attackMode == true)
             {
-                Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, l.transform.position, l.transform.rotation); 
+                StartCoroutine(LeftSlash());
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(slashV, l.transform.position, l.transform.rotation); 
                 //attackCopy.velocity = (-transform.right) * attackSpeed; 
-                Debug.Log("HalfCL");
+                //Debug.Log("HalfCL");
             }
         }
         else if (direction == "HalfCD")
         {
             if (attackMode == true)
             {
-                Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation); 
+                StartCoroutine(DownSlash()); 
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation); 
                 //attackCopy.velocity = (-transform.up) * attackSpeed; 
-                Debug.Log("HalfCD"); 
+                //Debug.Log("HalfCD"); 
             }
         }
         else if (direction == "HalfCU")
@@ -138,7 +141,7 @@ public class PlayerAttack2D : MonoBehaviour
         {
             if (magicMode == true)
             {
-                StartCoroutine(SideMagic());
+                StartCoroutine(RightMagic());
                 //Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
                 //attackCopy.velocity = transform.right * attackSpeed; 
                 //Debug.Log("Magic");
@@ -151,7 +154,25 @@ public class PlayerAttack2D : MonoBehaviour
                 StartCoroutine(UpMagic()); 
             }
         }
-        else if (direction == "Circle")
+        else if (direction == "LightL")
+        {
+            if (magicMode == true)
+            {
+                StartCoroutine(LeftMagic());
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, l.transform.position, l.transform.rotation); 
+                //attackCopy.velocity = (-transform.right) * attackSpeed; 
+            }
+        }
+        else if (direction == "LightD")
+        {
+            if (magicMode == true)
+            {
+                StartCoroutine(DownMagic());
+                //Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
+                //attackCopy.velocity = (-transform.up) * attackSpeed; 
+            }
+        }
+        else if (direction == "Guard")
         {
             StartCoroutine(Guard()); 
             //isGuard = true; 
@@ -298,7 +319,27 @@ public class PlayerAttack2D : MonoBehaviour
         animator.SetTrigger("OnSideSlash");
     }
 
-    IEnumerator SideMagic()
+    IEnumerator LeftSlash()
+    {
+        sprite.flipX = true; 
+        animator.SetTrigger("OnSideSlash"); 
+        Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, l.transform.position, l.transform.rotation);  
+        Debug.Log("Left"); 
+        yield return new WaitForSeconds(0.7f);
+        animator.SetTrigger("OnSideSlash");
+        sprite.flipX = false; 
+    }
+
+    IEnumerator DownSlash()
+    {
+        animator.SetTrigger("OnDownSlash"); 
+        Rigidbody attackCopy = (Rigidbody) Instantiate(slashH, d.transform.position, d.transform.rotation);  
+        Debug.Log("Down"); 
+        yield return new WaitForSeconds(0.7f);
+        animator.SetTrigger("OnDownSlash");
+    }
+
+    IEnumerator RightMagic()
     {
         animator.SetTrigger("OnSideMagic");
         Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
@@ -306,6 +347,18 @@ public class PlayerAttack2D : MonoBehaviour
         Debug.Log("Magic");
         yield return new WaitForSeconds(1.0f);
         animator.SetTrigger("OnSideMagic");
+    }
+
+    IEnumerator LeftMagic()
+    {
+        sprite.flipX = true; 
+        animator.SetTrigger("OnSideMagic");
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, r.transform.position, r.transform.rotation); 
+        attackCopy.velocity = (-transform.right) * attackSpeed; 
+        Debug.Log("Left magic");
+        yield return new WaitForSeconds(1.0f);
+        animator.SetTrigger("OnSideMagic");
+        sprite.flipX = false; 
     }
 
     IEnumerator UpMagic()
@@ -316,6 +369,16 @@ public class PlayerAttack2D : MonoBehaviour
         Debug.Log("UpMagic");
         yield return new WaitForSeconds(1.0f);
         animator.SetTrigger("OnUpMagic");
+    }
+
+    IEnumerator DownMagic()
+    {
+        animator.SetTrigger("OnDownMagic");
+        Rigidbody attackCopy = (Rigidbody) Instantiate(attack1, d.transform.position, d.transform.rotation); 
+        attackCopy.velocity = (-transform.up) * attackSpeed; 
+        Debug.Log("DownMagic");
+        yield return new WaitForSeconds(1.0f);
+        animator.SetTrigger("OnDownMagic");
     }
 
     private void RecentAttack(string direction)
