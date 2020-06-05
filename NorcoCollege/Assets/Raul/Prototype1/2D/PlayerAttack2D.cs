@@ -178,7 +178,10 @@ public class PlayerAttack2D : MonoBehaviour
             //isGuard = true; 
             //Debug.Log("We are now guarding!"); 
         }
-        AtMaxStyle(); 
+        if (maxStyle != true)
+        {
+            AtMaxStyle();
+        } 
 
     }
 
@@ -399,6 +402,7 @@ public class PlayerAttack2D : MonoBehaviour
         if (style >= minMaxStyle)
         {
             maxStyle = true; 
+            //health = 2; 
             animator.SetBool("AtMaxStyle", true); 
             animator.SetTrigger("MaxStyle"); 
             Debug.Log("Max style"); 
@@ -409,6 +413,7 @@ public class PlayerAttack2D : MonoBehaviour
             maxStyle = false; 
             animator.SetBool("AtMaxStyle", false);
         }
+        Debug.Log("Style: " + style); 
     }
 
     public void MaxStyleEnd()
@@ -440,7 +445,7 @@ public class PlayerAttack2D : MonoBehaviour
         }
         else
         {
-            style += 1; 
+            style += 2; 
         }
         //test.text = style.ToString(); 
     }
@@ -476,7 +481,8 @@ public class PlayerAttack2D : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player destroyed"); 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false); 
         }
     }
 

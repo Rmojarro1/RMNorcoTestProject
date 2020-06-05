@@ -5,28 +5,49 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject boss; 
-    public GameObject enemy; 
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public GameObject enemy3;
+    public GameObject player; 
 
-    //public GameObject bossSpawn; 
+    public Scenes sceneScript; 
 
-    //public GameObject enemySpawn; 
-    public bool isBoss; 
-    public bool isEnemy; 
+    //public bool isBoss; 
+    //public bool isEnemy; 
     
     // Start is called before the first frame update
     void Start()
-    {
-        //GameObject bossCopy = (GameObject) Instantiate(boss, bossSpawn.transform.position, bossSpawn.transform.rotation); 
-        boss.SetActive(true); 
-        enemy.SetActive(false); 
-        isBoss = true; 
-        //firstBoss = false; 
+    { 
+        //boss.SetActive(true); 
+        //enemy1.SetActive(false); 
+        //isBoss = true; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(boss.activeSelf == false)
+        
+
+    }
+
+    void Win()
+	{
+        if (enemy1.activeSelf == false && enemy2.activeSelf && enemy3.activeSelf && boss.activeSelf)
+		{
+            Debug.Log("You won!"); 
+		}
+	}
+
+    void GameOver()
+	{
+		if (player.activeSelf == false)
+		{
+            sceneScript.ReloadStage();
+        }
+        
+	}
+
+    /* OLD STUFF if(boss.activeSelf == false)
         {
             if(enemy.activeSelf == false)
             {
@@ -53,18 +74,6 @@ public class GameManager : MonoBehaviour
                 }
                 
             }
-        }
-        
-        /*if (firstBoss == false)
-        {
-            //GameObject bossCopy = (GameObject) Instantiate(boss, bossSpawn.transform.position, bossSpawn.transform.rotation);
-        }
-        
-        if (isBoss)
-        {
-            if (bossCopy == null)
-            //GameObject bossCopy = (GameObject) Instantiate(boss, bossSpawn.transform.position, bossSpawn.transform.rotation);
-        }*/
-    }
+        } */
 
 }

@@ -8,21 +8,28 @@ public class TestEnemyMove : MonoBehaviour
     public Transform target; 
     public float speed = 3f; 
 
-    bool isClose; 
+    bool isClose;
+    bool onStart; 
     
     // Start is called before the first frame update
     void Start()
     {
         //player = GameObject.FindGameObjectWithTag("Player"); 
+        onStart = true; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isClose != true)
-        {
-            TargetPlayer(); 
+        if (onStart == false)
+		{
+            if (isClose != true)
+            {
+                TargetPlayer();
+                //Debug.Log("We should be moving"); 
+            }
         }
+
     }
 
     void TargetPlayer()
@@ -42,6 +49,11 @@ public class TestEnemyMove : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            if (onStart == true)
+			{
+                onStart = false;
+                //Debug.Log("We should be active now"); 
+			}
             isClose = true; 
             Debug.Log("Player in range"); 
         }

@@ -25,4 +25,9 @@ public class Scenes : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void ReloadStage()
+	{
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString()); 
+	}
 }
