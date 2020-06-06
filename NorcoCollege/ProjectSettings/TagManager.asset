@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Shockwave
   - Wall
+  - EnemyBody
   layers:
   - Default
   - TransparentFX

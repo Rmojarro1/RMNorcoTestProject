@@ -9,21 +9,27 @@ public class TestEnemyMove : MonoBehaviour
     public float speed = 3f; 
 
     bool isClose;
-    bool onStart; 
+    bool onStart;
+
+    public GameObject es; 
+    //public EnemySense es; 
+
+    //public Rigidbody rb; 
     
     // Start is called before the first frame update
     void Start()
     {
         //player = GameObject.FindGameObjectWithTag("Player"); 
-        onStart = true; 
+        //onStart = true; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (onStart == false)
+        if (es.GetComponent<EnemySense>().getStart() == false)
 		{
-            if (isClose != true)
+            
+            if (es.GetComponent<EnemySense>().getClose() != true)
             {
                 TargetPlayer();
                 //Debug.Log("We should be moving"); 
@@ -43,9 +49,10 @@ public class TestEnemyMove : MonoBehaviour
 
         float step =  speed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, target.position, step/2);
+        //rb.MovePosition(target.position * step); 
     }
 
-    void OnTriggerEnter(Collider col)
+    /*void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -63,5 +70,5 @@ public class TestEnemyMove : MonoBehaviour
     {
         isClose = false; 
         Debug.Log("Player not in range");
-    }
+    }*/
 }

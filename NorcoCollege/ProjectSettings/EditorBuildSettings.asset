@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Carl/IslandMenu.unity
-    guid: e93214e416360854082cdd85f5519541
-  - enabled: 0
-    path: Assets/Carl/Test Scene.unity
-    guid: ab3734387b9702943aaef8f659e3a3da
+    path: Assets/Scenes/IslandMenu2.0.unity
+    guid: f98fee6c3957bff408d5f14d5b97098a
   - enabled: 1
-    path: Assets/Raul/Prototype1/2D/TestGrid.unity
-    guid: d0fb14a55feacf5449852e048c0f1c53
+    path: Assets/Raul/Prototype1/2D/Alt/Alt Version.unity
+    guid: bbe2da43d9071a04caa0fa0ec0486f77
   m_configObjects: {}

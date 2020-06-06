@@ -9,14 +9,12 @@ public class PlayerAttack2D : MonoBehaviour
     public TextMeshProUGUI displayStyle;
 
     public Rigidbody attack1;
-    //public Rigidbody attack2;
     public Rigidbody slashV;
     public Rigidbody slashH;
     public float attackSpeed = 10f;
 
     public Animator animator;
 
-    //public float knockback = 1f;
     public static int style = 0;
     public static int revertNormal; 
     public int minMaxStyle = 20;
@@ -38,7 +36,15 @@ public class PlayerAttack2D : MonoBehaviour
     bool moveMode; 
     bool attackMode; 
     bool magicMode; 
-    public SpriteRenderer sprite; 
+    public SpriteRenderer sprite;
+    public Rigidbody rb;
+    
+    public GameObject leftBlock;
+    public GameObject rightBlock;
+    public GameObject upBlock;
+    public GameObject downBlock; 
+
+    bool isBlocked; 
 
     
     // Start is called before the first frame update
@@ -46,7 +52,8 @@ public class PlayerAttack2D : MonoBehaviour
     {
         moveMode = true; 
         nextPosition = Vector3.up;
-        destination = transform.position; 
+        destination = transform.position;
+        rb = GetComponent<Rigidbody>(); 
     }
 
     // Update is called once per frame
@@ -237,25 +244,40 @@ public class PlayerAttack2D : MonoBehaviour
         //transform.position = Vector3.MoveTowards(transform.position, destination, 1f); 
         if (move == "Up")
         {
-            nextPosition = new Vector3(0, 1, 0); 
-            canMove = true; 
+            nextPosition = new Vector3(0, 1, 0);
+            if (upBlock.GetComponent<MoveTrigger>().IsBlocked() == false)
+            {
+                canMove = true;
+            }
+            //canMove = true; 
         }
 
         else if (move == "Down")
         {
-            nextPosition = new Vector3(0, -1, 0); 
-            canMove = true; 
+            nextPosition = new Vector3(0, -1, 0);
+            if (downBlock.GetComponent<MoveTrigger>().IsBlocked() == false)
+            {
+                canMove = true;
+            }
+            //canMove = true; 
         }
         else if (move == "Right")
         {
-            nextPosition = new Vector3(1, 0, 0); 
-            canMove = true; 
+            nextPosition = new Vector3(1, 0, 0);
+            if (rightBlock.GetComponent<MoveTrigger>().IsBlocked() == false)
+            {
+                canMove = true;
+            } 
         }
             
         else if (move == "Left")
         {
             nextPosition = new Vector3(-1, 0, 0); 
-            canMove = true; 
+            if (leftBlock.GetComponent<MoveTrigger>().IsBlocked() == false)
+			{
+                canMove = true;
+            }
+            
         }
 
         if (Vector3.Distance(destination, transform.position) <= 0.00001f)
@@ -271,7 +293,12 @@ public class PlayerAttack2D : MonoBehaviour
                 
             }
         }
-        transform.position = Vector3.MoveTowards(transform.position, destination, 1f);
+        //transform.position = Vector3.MoveTowards(transform.position, destination, 1f);
+        rb.MovePosition(destination); 
+        
+        
+        
+
     }
 
     void OnTriggerEnter(Collider col )
@@ -290,6 +317,7 @@ public class PlayerAttack2D : MonoBehaviour
             }
         }
     }
+
 
     IEnumerator UpSlash()
     {

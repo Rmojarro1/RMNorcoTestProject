@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
 
     public Scenes sceneScript; 
 
-    //public bool isBoss; 
-    //public bool isEnemy; 
     
     // Start is called before the first frame update
     void Start()
