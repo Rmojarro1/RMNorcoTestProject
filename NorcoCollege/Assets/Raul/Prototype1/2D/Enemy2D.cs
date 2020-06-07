@@ -12,7 +12,7 @@ public class Enemy2D : MonoBehaviour
     public Rigidbody wideSlashUp; 
     //public Rigidbody proj1; 
     private float timer = 5f; 
-    //private float attackSpeed = 10f; 
+    private float attackSpeed = 10f; 
 
     public Animator animator; 
 
@@ -28,8 +28,14 @@ public class Enemy2D : MonoBehaviour
 
     public GameObject up;
     public GameObject down; 
-    public int health = 1; 
-    
+    public int health = 1;
+
+    bool notActive;
+    public bool aimRight;
+    public bool aimLeft;
+
+    public SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +45,20 @@ public class Enemy2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Attack(); 
+        
+        if (notActive != true)
+		{
+            if (up.GetComponent<AttackTrigger>().ReturnRange() == true || down.GetComponent<AttackTrigger>().ReturnRange() == true)
+			{
+                notActive = true; 
+			}
+            Attack3();
+        }
+        else
+		{
+            Attack(); 
+		}
+            //Attack(); 
         //Attack2();
         //Attack3(); 
         //Attack4(); 
@@ -81,6 +100,17 @@ public class Enemy2D : MonoBehaviour
         animator.SetTrigger("OnSideRightAttack"); 
         yield return new WaitForSeconds(0.8f);
         animator.SetTrigger("OnSideRightAttack");
+    }
+
+    IEnumerator RightStab()
+    {
+        sprite.flipX = true; 
+        Rigidbody enemyProjCopy = (Rigidbody)Instantiate(projectile1, L.transform.position, L.transform.rotation);
+        enemyProjCopy.tag = "Enemy";
+        animator.SetTrigger("OnSideRightAttack");
+        yield return new WaitForSeconds(0.8f);
+        animator.SetTrigger("OnSideRightAttack");
+        sprite.flipX = false; 
     }
 
     IEnumerator DownStab()
@@ -129,30 +159,49 @@ public class Enemy2D : MonoBehaviour
 
     void Attack3()
     {
-        //performs a downward slash
+        //performs magic
         timer -= Time.deltaTime; 
         if (timer <= 0)
         {
-            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(projectile1, L.transform.position, L.transform.rotation);
-            enemyProjCopy.tag = "Enemy";
-            //enemyProjCopy.MovePosition(player.transform.position); 
-            enemyProjCopy.transform.position = Vector3.MoveTowards(enemyProjCopy.transform.position, player.transform.position, 5 ); 
-            timer = 3f;
+            if (aimRight == true)
+			{
+                StartCoroutine(RightMagic());
+                
+			}
+            else
+			{
+                StartCoroutine(LeftMagic());
+            }
+            timer = 5f; 
         }
     }
 
-    void Attack4()
+    IEnumerator RightMagic()
     {
-        //creates an upward slash
-        timer -= Time.deltaTime; 
-        if (timer <= 0)
-        {
-            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(wideSlashUp, U.transform.position, U.transform.rotation);
-            enemyProjCopy.tag = "Enemy"; 
-            //enemyProjCopy.velocity = (-transform.right) * attackSpeed;
-            timer = 2f;
-        }
+        sprite.flipX = true;
+        animator.SetTrigger("OnMagic");
+        yield return new WaitForSeconds(1f);
+        Rigidbody enemyProjCopy = (Rigidbody)Instantiate(projectile1, R.transform.position, R.transform.rotation);
+        enemyProjCopy.tag = "Enemy";
+        enemyProjCopy.velocity = (transform.right) * attackSpeed; 
+        //yield return new WaitForSeconds(0.8f);
+        animator.SetTrigger("OnMagic");
+        sprite.flipX = false;
     }
+
+    IEnumerator LeftMagic()
+    {
+        
+        animator.SetTrigger("OnMagic");
+        yield return new WaitForSeconds(1f);
+        Rigidbody enemyProjCopy = (Rigidbody)Instantiate(projectile1, L.transform.position, L.transform.rotation);
+        enemyProjCopy.tag = "Enemy";
+        enemyProjCopy.velocity = (-transform.right) * attackSpeed;
+        //yield return new WaitForSeconds(0.8f);
+        animator.SetTrigger("OnMagic");
+        
+    }
+
 
     void OnTriggerEnter(Collider col)
     {

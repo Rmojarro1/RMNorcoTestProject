@@ -99,7 +99,7 @@ public class MiniBoss : MonoBehaviour
         yield return new WaitForSeconds(1.4f);
         Rigidbody enemyProjCopy = (Rigidbody) Instantiate(wideSlashDown, D.transform.position, D.transform.rotation);
         enemyProjCopy.tag = "Enemy"; 
-        Debug.Log("Creating slash"); 
+        //Debug.Log("Creating slash"); 
         yield return new WaitForSeconds(0.9f);
         if (isRed == true)
         {
