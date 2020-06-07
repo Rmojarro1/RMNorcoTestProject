@@ -61,9 +61,9 @@ public class PlayerAttack2D : MonoBehaviour
     {
         DestroyGameObject();
         ModeChange(); 
-        //displayHealth.text = "Health: " + health;
-        //displayStyle.text = "Style: " + style + "/20";
-        //Move(); 
+        displayHealth.text = "Health: " + health;
+        displayStyle.text = "Style: " + style + "/20";
+         
     }
 
     void ModeChange()
@@ -312,7 +312,7 @@ public class PlayerAttack2D : MonoBehaviour
             else
             {
                 //GetComponent<Rigidbody2D>().velocity = new Vector2(-knockback, 0); 
-                Debug.Log("We're hit!"); 
+                //Debug.Log("We're hit!"); 
                 health--; 
             }
         }

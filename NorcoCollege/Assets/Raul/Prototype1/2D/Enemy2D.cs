@@ -24,7 +24,10 @@ public class Enemy2D : MonoBehaviour
     public GameObject DL; 
     public GameObject DR; 
     public GameObject UR; 
-    public GameObject UL; 
+    public GameObject UL;
+
+    public GameObject up;
+    public GameObject down; 
     public int health = 1; 
     
     // Start is called before the first frame update
@@ -50,7 +53,20 @@ public class Enemy2D : MonoBehaviour
         timer -= Time.deltaTime; 
         if (timer <= 0)
         {
-            StartCoroutine(RightStab()); 
+            if (up.GetComponent<AttackTrigger>().ReturnRange() == true)
+			{
+                StartCoroutine(UpStab());
+            }
+            else if (down.GetComponent<AttackTrigger>().ReturnRange() == true)
+			{
+                StartCoroutine(DownStab()); 
+			}
+            else
+			{
+                StartCoroutine(LeftStab());
+            }
+            
+            
             //Rigidbody enemyProjCopy = (Rigidbody) Instantiate(projectile1, L.transform.position, L.transform.rotation);
             //enemyProjCopy.tag = "Enemy"; 
             //enemyProjCopy.velocity = (-transform.right) * attackSpeed;
@@ -58,13 +74,31 @@ public class Enemy2D : MonoBehaviour
         }
     }
 
-    IEnumerator RightStab()
+    IEnumerator LeftStab()
     {
         Rigidbody enemyProjCopy = (Rigidbody) Instantiate(projectile1, L.transform.position, L.transform.rotation);
         enemyProjCopy.tag = "Enemy"; 
         animator.SetTrigger("OnSideRightAttack"); 
         yield return new WaitForSeconds(0.8f);
         animator.SetTrigger("OnSideRightAttack");
+    }
+
+    IEnumerator DownStab()
+    {
+        Rigidbody enemyProjCopy = (Rigidbody)Instantiate(projectile1, D.transform.position, D.transform.rotation);
+        enemyProjCopy.tag = "Enemy";
+        animator.SetTrigger("OnDownAttack");
+        yield return new WaitForSeconds(0.8f);
+        animator.SetTrigger("OnDownAttack");
+    }
+
+    IEnumerator UpStab()
+    {
+        Rigidbody enemyProjCopy = (Rigidbody)Instantiate(projectile1, U.transform.position, U.transform.rotation);
+        enemyProjCopy.tag = "Enemy";
+        animator.SetTrigger("OnUpAttack");
+        yield return new WaitForSeconds(0.8f);
+        animator.SetTrigger("OnUpAttack");
     }
 
     void Attack2()
@@ -99,10 +133,11 @@ public class Enemy2D : MonoBehaviour
         timer -= Time.deltaTime; 
         if (timer <= 0)
         {
-            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(wideSlashDown, D.transform.position, D.transform.rotation);
-            enemyProjCopy.tag = "Enemy"; 
-            //enemyProjCopy.velocity = (-transform.right) * attackSpeed;
-            timer = 2f;
+            Rigidbody enemyProjCopy = (Rigidbody) Instantiate(projectile1, L.transform.position, L.transform.rotation);
+            enemyProjCopy.tag = "Enemy";
+            //enemyProjCopy.MovePosition(player.transform.position); 
+            enemyProjCopy.transform.position = Vector3.MoveTowards(enemyProjCopy.transform.position, player.transform.position, 5 ); 
+            timer = 3f;
         }
     }
 
